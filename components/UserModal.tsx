@@ -36,6 +36,7 @@ export default function UserModal({ isOpen, onClose }: UserModalProps) {
       message.success(`User ${data.name} created successfully`);
       onClose();
       setUsername("");
+      window.location.reload();
     } catch (err: any) {
       message.error(err.message);
     }
@@ -44,7 +45,7 @@ export default function UserModal({ isOpen, onClose }: UserModalProps) {
   return (
     <div className="flex justify-center mt-6">
       <Modal
-        title="We should call you something, right?"
+        title="We should call you by your username, right?"
         open={isOpen}
         onCancel={onClose}
         footer={null}
